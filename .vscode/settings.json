@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.in": "cmake",
+        "*.cc": "plaintext",
+        "string": "cpp",
+        "vector": "cpp"
+    }
+}

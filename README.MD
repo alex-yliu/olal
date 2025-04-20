@@ -18,6 +18,9 @@ Following are in the `build` folder.
 # Additional
 
 - Would you like to break out a SmartContractVM C++ class to better encapsulate Lua interaction? 
+- Would you like the .cpp implementations for Account and Transaction?
+- Want me to scaffold unit tests?
+- Shall we begin wiring this up with Lua smart contract hooks?
 
 When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
