@@ -1,0 +1,16 @@
+[requires]
+fmt/10.2.1
+spdlog/1.12.0
+boost/1.84.0
+libsodium/1.0.20
+openssl/3.2.0
+luajit/2.1.0-beta3
+sqlite3/3.49.1
+gtest/1.14.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[options]
+gtest/1.14.0:shared=True

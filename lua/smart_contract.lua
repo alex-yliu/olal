@@ -1,0 +1,1 @@
+print("Lua Smart Contract Loaded!")
