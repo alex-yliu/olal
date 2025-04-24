@@ -1,16 +1,15 @@
 [requires]
-fmt/10.2.1
-spdlog/1.12.0
-boost/1.84.0
+fmt/11.1.3
+spdlog/1.15.1
+boost/1.87.0
 libsodium/1.0.20
-openssl/3.2.0
+openssl/3.4.1
 luajit/2.1.0-beta3
 sqlite3/3.49.1
-gtest/1.14.0
+gtest/1.16.0
+bitsery/5.2.4
 
 [generators]
 CMakeDeps
 CMakeToolchain
 
-[options]
-gtest/1.14.0:shared=True

@@ -1,0 +1,13 @@
+{
+  "dependencies": [
+    "fmt",
+    "spdlog",
+    "boost",
+    "libsodium",
+    "openssl",
+    "luajit",
+    "sqlite3",
+    "gtest",
+    "bitsery"
+  ]
+}

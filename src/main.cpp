@@ -11,10 +11,22 @@
 #include <lua.hpp>
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
+#include "lib/account.hpp"
+#include "lib/key_pair.hpp"
 
-// tx_z<tx_pending_t> test_ext() {
-//     tx_z<tx_pending_t> p(tx_pending_t{});
-//     return p;
+using namespace olal;
+
+// auto mainKey = std::make_shared<Ed25519KeyPair>();
+// auto account = Account(mainKey);
+
+// auto delegate1 = std::make_shared<Ed25519KeyPair>();
+// auto delegate2 = std::make_shared<Ed25519KeyPair>();
+
+// account.addDelegateKey(delegate1);
+// account.addDelegateKey(delegate2);
+
+// if (account.hasDelegateKey(delegate1->getPublicKeyBase58())) {
+//     std::cout << "Delegate recognized." << std::endl;
 // }
 
 int main(int argc, const char *argv[])

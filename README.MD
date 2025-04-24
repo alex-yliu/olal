@@ -1,18 +1,97 @@
 # Olal cryptocurrency
 
-Following are in the `build` folder.
+install vcpkg as mentioned online.
 
-- `rm -rf build && mkdir build`
-- In root folder: `conan install . --output-folder=build --build=missing`
-- `cd build`
-- `cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release`
-- `cmake --build .`
-- `ctest --output-on-failure`
+Define UserMakeUserPresets.json
 
+```
+{
+    "version": 4,
+    "configurePresets": [
+        {
+            "name": "default",
+            "inherits": "vcpkg",
+            "environment": {
+                "VCPKG_ROOT": "/path/to/folder/of/vcpkg"
+            }
+        }
+    ]
+}
+```
 
-# Resources
+- `brew install ninja autoconf automake libtool autoconf-archive`
+- `brew install pkg-config`
 
-- Autotools: https://opensource.com/article/19/7/introduction-gnu-autotools
+Then to build the project
+
+First preset: 
+
+- `cmake --preset=default`
+- `cmake --build build`
+
+# CMake config
+
+bitsery provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(Bitsery CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE Bitsery::bitsery)
+
+sqlite3 provides pkgconfig bindings.
+sqlite3 provides CMake targets:
+
+    find_package(unofficial-sqlite3 CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE unofficial::sqlite3::sqlite3)
+
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+The package fmt provides CMake targets:
+
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt)
+
+    # Or use the header-only version
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt-header-only)
+
+The package gtest is compatible with built-in CMake targets:
+
+    enable_testing()
+    
+    find_package(GTest CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+    
+    add_test(AllTestsInMain main)
+
+libsodium provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(unofficial-sodium CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial-sodium::sodium)
+
+libsodium provides pkg-config modules:
+
+  # A modern and easy-to-use crypto library
+  libsodium
+
+luajit provides pkg-config modules:
+
+  # Just-in-time compiler for Lua
+  luajit
+
+The package spdlog provides CMake targets:
+
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog)
+
+    # Or use the header-only version
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog_header_only)
+
 
 
 # Additional

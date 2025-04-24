@@ -216,4 +216,6 @@ Dependencies/
 old_*
 *.old
 *.bak
-
+CMakeFiles
+CMakeCache.txt
+CMakeUserPresets.json
