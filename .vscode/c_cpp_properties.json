@@ -3,10 +3,8 @@
       {
         "name": "macOS-M2",
         "includePath": [
-          "${workspaceFolder}/**",
-          "${workspaceFolder}/build/generators",   // Where Conan puts headers
-          "${workspaceFolder}/build/_deps/**",      // If you're using Conan with source builds
-          "~/.conan2/**"
+          "${workspaceFolder}/src/**",
+          "${workspaceFolder}/lua/**"
         ],
         "defines": [],
         "compilerPath": "/usr/bin/clang++",

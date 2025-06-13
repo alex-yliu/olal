@@ -5,17 +5,14 @@ project(olal_core)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# Conan setup
-# include(${CMAKE_BINARY_DIR}/build/conan_toolchain.cmake)
-# include(${CMAKE_BINARY_DIR}/build/conandeps_legacy.cmake)
 # list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_BINARY_DIR}/")
 find_package(PkgConfig REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 find_package(unofficial-sodium CONFIG REQUIRED)
+find_package(liboqs CONFIG REQUIRED)
 find_package(Boost CONFIG REQUIRED)
 find_package(OpenSSL CONFIG REQUIRED)
-
 find_package(unofficial-sqlite3 CONFIG REQUIRED)
 find_package(Bitsery CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
@@ -45,10 +42,9 @@ target_link_libraries(olal_core PUBLIC
     spdlog::spdlog_header_only
     Boost::boost
     unofficial-sodium::sodium
+    OQS::oqs
     OpenSSL::SSL
     OpenSSL::Crypto
-
-    # luajit::luajit
     ${LUAJIT_LIBRARIES}
     unofficial::sqlite3::sqlite3
     Bitsery::bitsery

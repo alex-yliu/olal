@@ -92,6 +92,16 @@ The package spdlog provides CMake targets:
     find_package(spdlog CONFIG REQUIRED)
     target_link_libraries(main PRIVATE spdlog::spdlog_header_only)
 
+liboqs provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(liboqs CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE OQS::oqs)
+
+liboqs provides pkg-config modules:
+
+  # Library for quantum-safe cryptographic algorithms
+  liboqs
 
 
 # Additional
